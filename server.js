@@ -23,7 +23,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(cors());
-app.get('/', (req, res) => {res.send('It is working NORMAL')})
+app.get('/', (req, res) => {res.send('TEST 1')})
 app.post('/signin', (req, res) => { signin.handleSignIn(req, res, db, bcrypt)});
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt)});
 app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db)});
@@ -31,5 +31,5 @@ app.put('/image', (req, res) => { image.handleImage(req, res, db)});
 app.post('/apicall', (req, res) => { image.clarifaiCall(req, res)});
 
 app.listen(process.env.PORT || 3005, () => {
-    console.log(`Server is running ${process.env.PORT}`)
+    console.log(`Server is running`)
 })
