@@ -7,7 +7,7 @@ const clarifaiCall = (req, res) => {
     .then(response => {
         res.json(response);
     })
-    .catch(err => res.status(400).json('unable to make an API call'))
+    .catch(err => res.status(400).json(process.env.DATABASE_URL))
 }
 
 
